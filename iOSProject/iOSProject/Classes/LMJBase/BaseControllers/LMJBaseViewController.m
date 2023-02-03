@@ -7,7 +7,7 @@
 //
 
 #import "LMJBaseViewController.h"
-#import "LMJUMengHelper.h"
+//#import "LMJUMengHelper.h"
 
 @interface LMJBaseViewController ()
 
@@ -36,7 +36,7 @@
     [super viewWillAppear:animated];
     
     // 配置友盟统计
-    [LMJUMengHelper beginLogPageViewName:self.title ?: self.navigationItem.title];
+//    [LMJUMengHelper beginLogPageViewName:self.title ?: self.navigationItem.title];
     
 }
 
@@ -52,7 +52,7 @@
     [super viewDidDisappear:animated];
     
     // 配置友盟统计
-    [LMJUMengHelper endLogPageViewName:self.title ?: self.navigationItem.title];
+//    [LMJUMengHelper endLogPageViewName:self.title ?: self.navigationItem.title];
 }
 
 - (instancetype)initWithTitle:(NSString *)title

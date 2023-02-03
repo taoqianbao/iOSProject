@@ -24,12 +24,12 @@ pod 'SDWebImage/GIF'
 pod 'Masonry'
 
 #友盟统计和分享
-pod 'UMengAnalytics'
+# pod 'UMengAnalytics'
 # U-Share SDK UI模块（分享面板，建议添加）
-pod 'UMengUShare/UI'
-pod 'UMengUShare/Social/ReducedWeChat'
-pod 'UMengUShare/Social/QQ'
-pod 'UMengUShare/Social/Sina'
+# pod 'UMengUShare/UI'
+# pod 'UMengUShare/Social/ReducedWeChat'
+# pod 'UMengUShare/Social/QQ'
+# pod 'UMengUShare/Social/Sina'
 
 #百度地图SDK
 pod 'BaiduMapKit', '4.1.1'

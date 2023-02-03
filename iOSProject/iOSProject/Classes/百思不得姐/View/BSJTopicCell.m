@@ -10,7 +10,7 @@
 #import "BSJTopicPictureView.h"
 #import "BSJTopicVoiceView.h"
 #import "BSJTopicVideoView.h"
-#import "LMJUMengHelper.h"
+//#import "LMJUMengHelper.h"
 
 @interface BSJTopicCell ()
 
@@ -167,7 +167,7 @@
 
 - (IBAction)repostButtonClick:(UIButton *)sender {
     
-    [LMJUMengHelper shareTitle:self.topicViewModel.topic.name subTitle:self.topicViewModel.topic.text thumbImage:self.topicViewModel.topic.profile_image.absoluteString shareURL:self.topicViewModel.topic.weixin_url];
+//    [LMJUMengHelper shareTitle:self.topicViewModel.topic.name subTitle:self.topicViewModel.topic.text thumbImage:self.topicViewModel.topic.profile_image.absoluteString shareURL:self.topicViewModel.topic.weixin_url];
 }
 - (IBAction)commentButtonClick:(UIButton *)sender {
 }

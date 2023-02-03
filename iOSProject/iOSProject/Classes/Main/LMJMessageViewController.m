@@ -8,10 +8,9 @@
 
 #import "LMJMessageViewController.h"
 #import "BSJTabBarController.h"
-#import "SINTabBarController.h"
+//#import "SINTabBarController.h"
 //#import "IMHTabBarController.h"
 #import "MUSHomeListViewController.h"
-#import "SINUserManager.h"
 #import "UIView+GestureCallback.h"
 
 @interface LMJMessageViewController ()
@@ -37,10 +36,11 @@
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"模仿微博App" subTitle: @"NJSina"];
-    [item1 setItemOperation:^(NSIndexPath *indexPath){
-        [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
-    }];
+    LMJWordItem *item1 = nil;
+    //[LMJWordItem itemWithTitle:@"模仿微博App" subTitle: @"NJSina"];
+//    [item1 setItemOperation:^(NSIndexPath *indexPath){
+//        [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
+//    }];
     
     //    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
     //    [item2 setItemOperation:^(NSIndexPath *indexPath){
@@ -67,9 +67,9 @@
             return ;
         }
         // 作者的微博开放号
-        if ([LMJThirdSDKSinaAppKey isEqualToString:@"4061770881"]) {
-            SINUserManager.sharedManager.accessToken = response.responseObject[@"accessToken"];
-        }
+//        if ([LMJThirdSDKSinaAppKey isEqualToString:@"4061770881"]) {
+//            SINUserManager.sharedManager.accessToken = response.responseObject[@"accessToken"];
+//        }
     }];
 }
 

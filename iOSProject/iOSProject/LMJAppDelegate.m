@@ -11,7 +11,7 @@
 #import "LMJIntroductoryPagesHelper.h"
 #import "AdvertiseHelper.h"
 #import "YYFPSLabel.h"
-#import "LMJUMengHelper.h"
+//#import "LMJUMengHelper.h"
 #import <UserNotificationsUI/UserNotificationsUI.h>
 
 @implementation LMJAppDelegate
@@ -76,35 +76,37 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-implementations"
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-        BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    if (!result) {
-        // 其他如支付等SDK的回调
-        
-    }
-    return result;
+//        BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+//    if (!result) {
+//        // 其他如支付等SDK的回调
+//
+//    }
+//    return result;
+    return false;
 }
 #pragma clang diagnostic pop
 //iOS9+scheme跳转
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
 {
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
-    
-    if (!result) {
-        // 其他如支付等SDK的回调
-    }
-    
-    if (url) {
-        NSLog(@"%@", url);
-        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-
-            alertMaker.addActionDefaultTitle(@"确认");
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-
-        }];
-    }
-    
-    return result;
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+//
+//    if (!result) {
+//        // 其他如支付等SDK的回调
+//    }
+//
+//    if (url) {
+//        NSLog(@"%@", url);
+//        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+//
+//            alertMaker.addActionDefaultTitle(@"确认");
+//        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+//
+//        }];
+//    }
+//
+//    return result;
+    return false;
 }
 
 
@@ -143,9 +145,9 @@
         if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             //应用处于前台时的远程推送接受
             //关闭U-Push自带的弹出框
-            [UMessage setAutoAlert:NO];
+//            [UMessage setAutoAlert:NO];
             //必须加这句代码
-            [UMessage didReceiveRemoteNotification:userInfo];
+//            [UMessage didReceiveRemoteNotification:userInfo];
             
             [UIAlertController mj_showAlertWithTitle:@"2_iOS10新增：处理前台收到通知的代理方法" message:userInfo.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
                 
@@ -171,7 +173,7 @@
         
         //应用处于后台时的远程推送接受
         //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
+//        [UMessage didReceiveRemoteNotification:userInfo];
         [UIAlertController mj_showAlertWithTitle:@"3_iOS10新增：处理后台点击通知的代理方法" message:userInfo.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
             alertMaker.addActionDefaultTitle(@"确认");
         } actionsBlock:nil];
